@@ -1,0 +1,79 @@
+* {
+    margin: 0px auto;
+    padding : 0px;
+
+    font-family:Helvetica Black, Speedee, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    line-height: 24px;
+    color: #292929;
+    letter-spacing: -.15px;
+}
+
+.container {
+    max-width: 1170px;
+    padding-top:15px;
+    .navbar {
+        box-shadow: none;
+
+        .collapse {
+            .nav-item {
+                padding-right: 25px;
+                font-size:1pc;
+                a:active{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .main-content{
+        padding-top:75pt;
+        .title h1{
+            font-size:54px;
+            font-weight:700;
+            line-height:56px;
+        }
+        .card{
+            padding-top :75pt;
+            box-shadow:none;
+            .card-body{
+                .card-title{
+                    margin-top:15px;
+                    margin-bottom:18px;
+                    font-weight: 700;
+                    line-height: 40px;
+                }
+                .card-text{
+                    margin-bottom:18px;
+                    line-height: 1.5;
+                    font-size: 1pc;
+                    .muted-text{
+                        font-size:10px;
+                        color:#292929
+                    }
+                }
+                .card-btn{
+                        background-color: #ffbc0d;
+                        min-width: 11.125rem;
+                        min-height: 3rem;
+                        text-transform:inherit;
+                        padding: .8125rem 1.5625rem;
+                        line-height: 1.25rem;
+                        font-size:1pc;
+                        color:#292929;
+                        font-weight:400
+                      }
+                }
+            } 
+            .disclaimer {
+                padding-top:75pt;
+                h2{
+                    font-size: 36px;
+                    font-weight: 700;
+                    line-height: 40px;
+                }
+                p{
+                    margin-top:18px;
+                    font-size: 1pc;
+                }
+            }
+        }
+    }
