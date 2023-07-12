@@ -1,0 +1,31 @@
+@import '../../../styles.scss';
+
+    .main-content {
+        // padding:0 20px;
+        @include main-content;
+        .hero-img{
+            padding:0 1rem;
+        }
+        .cards{
+            .card{
+                padding-top:75px;
+                box-shadow:none;
+                
+                .card-body{
+                    .card-title{
+                        margin-top:45px;
+                        // margin-bottom:18px;
+                        font-size: 36px;
+                        font-weight: 400;
+                        line-height: 40px;
+                    }
+                    .card-text{
+                        font-size:1pc;
+                    }
+                    button{
+                        @include button;
+                    }
+                }
+            }
+        }
+    }

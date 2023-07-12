@@ -1,0 +1,106 @@
+.footer {
+    padding-top: 75pt;
+    padding-bottom: 75pt;
+
+    .footer-items {
+        margin-bottom: 40px;
+
+        .footer-item {
+            h2 {
+                line-height: 20px;
+                font-size: 1pc;
+                margin-bottom: 40px;
+                margin-top: revert;
+                text-align: left;
+                font-weight: 700;
+            }
+
+            ul {
+                padding: 0;
+
+                li {
+                    list-style-type: none;
+                    line-height: 30px;
+
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .social-media {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 46px;
+
+        .sites {
+            justify-content: flex-start;
+
+            .image {
+                margin-right: 21px;
+                border: 1px solid gray;
+                border-radius: 50%;
+
+                fa-icon {
+                    padding: 7px;
+                }
+            }
+        }
+
+        .downloads {
+            justify-content: flex-end;
+
+        }
+    }
+
+    hr {
+        margin: 0px -20px 50px -20px;
+    }
+
+    .additional-footer-items {
+        .additional-footer-item {
+            flex-basis: 66.66%;
+
+            .list ul {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+
+                li {
+                    list-style-type: none;
+                    line-height: 30px;
+                    margin-right: 40px;
+                    margin-bottom: 18px;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+
+        .copyrights {
+            text-align: right;
+        }
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    .footer .social-media {
+        flex-direction: column;
+
+        .sites {
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .downloads {
+            justify-content: space-around
+        }
+    }
+}

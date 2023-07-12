@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+$button-bg-color:#ffbc0d;
+
+@mixin common-styling{
+    font-family: Helvetica Black, Speedee, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    line-height: 24px;
+    color: #292929;
+    letter-spacing: -.15px;
+}
+
+
+
+@mixin button{
+    background-color: $button-bg-color;
+    text-transform: inherit;
+    
+    font-size: 1pc;
+    color: #292929;
+    font-weight: 400;
+    transition:all 0.1s ease-out;
+    box-shadow:inset 0 0 0 0 #fff;
+    &:hover{
+       @include button-hover;
+    }
+}
+@mixin button-hover{
+    background-color: #fff;
+    color:$button-bg-color;
+    border:1px solid $button-bg-color;
+
+}
+@mixin main-content{
+    padding-top: 75pt;
+    .title h1 {
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 56px;
+        margin-bottom:17px;
+        span{
+            display:inline-block;
+            animation: bounce 1s ease forwards;
+        }    
+    }
+    @include disclaimer;
+}
+
+@mixin disclaimer{
+    .disclaimer {
+        padding-top: 75pt;
+        margin-bottom: 2pc;
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 40px;
+        }
+        p {
+            margin-top: 18px;
+            font-size: 1pc;
+        }
+    }
+}
+
+
+
+//Animations
+
+
+@keyframes bounce {
+        0%   { transform: scale(1,1) translateY(0); }
+            10%  { transform: scale(1.1,.9) translateY(0); }
+            30%  { transform: scale(.9,1.1)   translateY(-55px);}
+            50%  { transform: scale(1.05,.95) translateY(0); }
+            58%  { transform: scale(1,1) translateY(-30px); }
+            65%  { transform: scale(1,1) translateY(0);}
+            75%  { transform: scale(1,1) translateY(-20px);}
+            80%  { transform: scale(1,1) translateY(0px);}
+            92%  { transform: scale(1,1) translateY(-10px);}
+            100% { transform: scale(1,1) translateY(0);}
+}
+
+@keyframes animate{
+    35% {transform:rotateZ(0deg)}
+    40% {transform:rotateZ(5deg)}
+    45% {transform:rotateZ(-5deg)}
+    50% {transform:rotateZ(5deg)}
+    55% {transform:rotateZ(-5deg)}
+    60% {transform:rotateZ(5deg)}
+    65%{transform:rotateZ(-5deg)}
+    70% {transform:rotateZ(0deg)}
+  }
+
+
+
+
+
+    

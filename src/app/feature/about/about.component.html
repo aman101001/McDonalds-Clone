@@ -1,0 +1,34 @@
+<div class="main-content">
+    <div class="title d-flex justify-content-center">
+      <h1>About Our <span>Food</span></h1>
+    </div>
+    <div class="hero-img my-5">
+        <img src="../../../assets/images/hero_img.jpeg" loading="lazy" alt="" class="img-fluid">
+    </div>
+    <div class="disclaimer px-3">
+        <h2>We’re Passionate About Our Food</h2>
+        <p>From adding more balanced options to our Happy Meal®, to serving up fresh beef Quarter Pounder® burgers that are cooked when you order,
+             we’re always finding ways to show our commitment to our customers and our food. </p>
+    </div>
+    <div class="cards px-3" >
+        <div class="row" >
+            <div class="col-md-6" *ngFor="let card of cards"  >
+                <div class="card" >
+                    <div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
+                      <img [src]="card.img" loading="lazy" class="img-fluid w-100"/>
+                      <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{card.cardTitle}}</h5>
+                      <p class="card-text">{{card.cardText}}</p>
+                      <button type="button" class="btn card-btn">{{card.buttonText}}</button>
+                    </div>
+                    
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
