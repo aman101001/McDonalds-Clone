@@ -1,0 +1,40 @@
+@import '../../../styles.scss';
+
+.main-content {
+    @include main-content;
+
+   .sign-up-form{
+        padding:0 30px;
+        margin:40px auto;
+        max-width:750px;
+
+        h2{
+            font-weight:700;
+        }
+        form{
+            margin-top:60px;
+            .invalid-feedback{
+                position:absolute;
+                
+            }
+            p{
+                margin-top:50px;
+                line-height:normal;
+            }
+            button{
+                @include button;
+            }
+        }
+       
+    }
+}
+
+
+@media screen and (max-width:991px){
+    .main-content{
+      padding-top:0;
+      .title h1{
+        padding-left:30px;
+      }
+  }
+}

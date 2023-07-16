@@ -4,7 +4,7 @@
         @include main-content;
 
         .card {
-            padding-top: 75pt;
+            padding-top: 35pt;
             box-shadow:none;
             img{
             //   transition:opacity 0.1s ease-in;
@@ -39,15 +39,18 @@
                     line-height: 1.25rem
                 }
             }
+            &:first-child{
+                opacity:1;
+                transform:translateY(0);
+              }
         }
 
-        
-    }
+        }
+  
 
 
 @media screen and (max-width: 512px){
     .main-content{
-
     .title h1{
        font-size:40px;
        }
@@ -67,9 +70,9 @@
    }
 }
 
-@media screen and (max-width:992px){
-    .container .main-content{
-      padding-top:10pt;
+@media screen and (max-width:991px){
+    .main-content{
+      padding-top:0;
   }
 }
 

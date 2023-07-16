@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="title d-flex justify-content-center">
+      <h1>McDonald’s Email <span>Signup </span></h1>
+    </div>
+
+    <div class="sign-up-form">
+        <div class="sign-up-header">
+            <h2>Sign Up</h2>
+            <p>Be in the know about deals, MyMcDonald’s Rewards, news and more by signing up for emails.</p>
+        </div>
+        <form class="needs-validation" [formGroup]="signUpForm" (ngSubmit)="submit()">
+            <div class="mb-3 form-group  was-validated">
+              <label for="exampleInputEmail1" class="form-label">Email address*</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp">
+              <div class="invalid-feedback">
+               Please enter a valid email address.
+              </div>
+              <div id="emailHelp" class="form-text pt-2">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3 form-group  was-validated">
+              <label for="exampleZipCode" class="form-label">Zip Code</label>
+              <input type="text" class="form-control" pattern=[0-9]{4,7} formControlName="zipCode" id="exampleZipCode">
+              <div class="invalid-feedback">
+                Please enter a valid Zip Code.
+              </div>
+            </div>
+           
+            <p>
+                <small class="text-muted ">
+                *By selecting "Sign Up," you agree to the McDonald's &nbsp;<a href="">Privacy Policy</a> &nbsp;and  &nbsp;<a href="">Terms & Conditions.</a>
+                Unsubscribe from emails any time. Please note when unsubscribing: it may take up to 10 business days for your request to take effect.
+                </small></p>
+            <button type="submit" class="btn" [disabled]="!signUpForm.valid">Submit</button>
+          </form>
+    </div>
+<div>  

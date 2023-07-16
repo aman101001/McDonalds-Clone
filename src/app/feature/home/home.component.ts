@@ -1,28 +1,5 @@
-import { Component } from '@angular/core';
-// import {faFacebookF,faTwitter,faYoutube,faInstagram} from '@fortawesome/free-brands-svg-icons';
- 
-// const elements = document.querySelectorAll('.container');
-//    console.log(elements);
-// const options = {
-//   root: null,
-//   rootMargin: '0px',
-//   threshold:.1
-// }
-// const callbacks = (entries:any) => {
-//   entries.forEach((entry:any) => {
-//     if (entry.isIntersecting){
-//       entry.target.classList.add('active');
-//       return;
-//     }
-//         entry.target.classList.remove('active');
-    
-//   });
-// }
-// let observer = new IntersectionObserver(callbacks, options);
-// elements.forEach((element)=> {
-//   observer.observe(element);
-// });
-
+import { Component, HostListener, OnInit } from '@angular/core';
+import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 
 interface Card {
   img:string;
@@ -39,10 +16,25 @@ interface Card {
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent {
 
-  cards:Card[]=[];
+export class HomeComponent implements OnInit{
 
+cards:Card[]=[];
+  
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible =150;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+}
  constructor(){
   this.cards= [{
     img:"../../assets/images/card1.jpg",
@@ -71,9 +63,67 @@ export class HomeComponent {
     disclaimer:"*Offer valid 1x thru the last day of the month for first time app users at participating McDonald's. May take up to 48 hours to appear in your deals. Must opt in to MyMcDonald’s Rewards. Excludes tax.",
     buttonText:"Get Free Fries In The App"
    }];
-   
+  
  }
- 
+ ngOnInit(): void {
+ }
+
+ dynamicSlides:any = [
+  {
+    id: 1,
+    src:'../../assets/images/carosal1.jpg',
+    alt:'Side 1',
+    title:'Side 1'
+  },
+  {
+    id: 2,
+    src:'../../assets/images/carosal2.jpg',
+    alt:'Side 2',
+    title:'Side 2'
+  },
+  {
+    id: 3,
+    src:'../../assets/images/carosal3.jpg',
+    alt:'Side 3',
+    title:'Side 3'
+  },
+  {
+    id: 4,
+    src:'../../assets/images/carosal4.jpg',
+    alt:'Side 4',
+    title:'Side 4'
+  },
+]
+
+
+ customOptions: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: false,
+  pullDrag: false,
+  dots:false,
+  navSpeed: 600,
+  navText: ['&#8249', '&#8250;'],
+  responsive: {
+    0: {
+      items: 1 
+    },
+    400: {
+      items: 2
+    },
+    760: {
+      items: 3
+    },
+    // 1000: {
+    //   items: 4
+    // }
+  },
+  nav: true
 }
+
+ 
+
+}
+
 
 

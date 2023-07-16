@@ -1,5 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 $button-bg-color:#ffbc0d;
+
+.reveal{
+    position: relative;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+
+  .active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 
 @mixin common-styling{
     font-family: Helvetica Black, Speedee, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
@@ -13,7 +29,6 @@ $button-bg-color:#ffbc0d;
 @mixin button{
     background-color: $button-bg-color;
     text-transform: inherit;
-    
     font-size: 1pc;
     color: #292929;
     font-weight: 400;
@@ -36,6 +51,7 @@ $button-bg-color:#ffbc0d;
         font-weight: 700;
         line-height: 56px;
         margin-bottom:17px;
+        margin:auto;
         span{
             display:inline-block;
             animation: bounce 1s ease forwards;

@@ -7,8 +7,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AboutComponent } from './feature/about/about.component';
-import { GiftCardComponent } from './feature/gift-card/gift-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -16,13 +16,14 @@ import { GiftCardComponent } from './feature/gift-card/gift-card.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    // GiftCardComponent,
-    // AboutComponent
+
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    CarouselModule
    
   ],
   providers: [],

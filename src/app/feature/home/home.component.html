@@ -1,10 +1,16 @@
+<div class="main-content">
+  <div class="title d-flex justify-content-center">
+    <h1>McDonald's <span>App</span></h1>
+  </div>
 
-  <div class="main-content">
-    <div class="title d-flex justify-content-center">
-      <h1>McDonald's <span>App</span></h1>
-    </div>
+  <div class="disclaimer px-3">
+    <ng-container [ngTemplateOutlet]="disclaimer" [ngTemplateOutletContext]="{title:'We\’re Passionate About Our Food',
+    content:'From adding more balanced options to our Happy Meal®, to serving up fresh beef Quarter Pounder® burgers that are cooked when you order,
+     we\’re always finding ways to show our commitment to our customers and our food. '}"></ng-container>
+  </div>
 
-    <div class="card mb-3 px-2 "  *ngFor="let card of cards">
+  <div>
+    <div class="card mb-3 px-2 reveal" *ngFor="let card of cards">
       <div class="row g-0 ">
         <div class="col-lg-8 image">
           <img [src]="card.img" loading="lazy" alt="Trendy Pants and Shoes" class="img-fluid px-3 " />
@@ -13,24 +19,38 @@
           <div class="card-body py-0 px-3">
             <h2 class="card-title">{{card.cardTitle}}</h2>
             <p class="card-text">
-               {{card.cardText}}
+              {{card.cardText}}
             </p>
             <p class="muted-text">
               <small class="text-muted ">{{card.disclaimer}}</small>
             </p>
             <button type="button" class="btn card-btn">{{card.buttonText}}</button>
           </div>
-
         </div>
       </div>
     </div>
- 
-
-    <div class="disclaimer px-3">
-      <h2>Deals and Much More</h2>
-      <p>With the McDonald’s app, you’ll get access to exclusive deals. Use the app to order
-        ahead and pass the line with Mobile Order & Pay plus join MyMcDonald’s
-        Rewards to earn points on every order to redeem for free McDonald's.</p>
-    </div>
   </div>
-    
+
+   
+  <div class="disclaimer px-3 reveal">
+    <ng-container [ngTemplateOutlet]="disclaimer" [ngTemplateOutletContext]="{title:'Deals and Much More',content:'With the McDonald\’s app, you\’ll get access to exclusive deals. Use the app to order
+    ahead and pass the line with Mobile Order & Pay plus join MyMcDonald\’s
+    Rewards to earn points on every order to redeem for free McDonald\'s.'}"></ng-container>
+  </div>
+
+<div class="carosal">
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of dynamicSlides">
+      <ng-template carouselSlide [id]="slide.id">
+        <img  [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
+</div>
+
+
+<ng-template #disclaimer let-title="title" let-content="content">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+</ng-template>

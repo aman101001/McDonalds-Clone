@@ -106,13 +106,61 @@
 @media screen and (max-width:576px) {
     .modal .modal-dialog {
         .modal-body {
-            padding: 0 10px;
+            padding: 0 30px;
         }
 
         .modal-footer {
+            flex-direction: column;
             button {
-                width: 100px;
+                width: 150px;
+                margin-top:20px;
             }
         }
     }
+}
+
+
+@media screen and (max-width:1050px) {
+    .main-content .hero{
+        .gift-card-hero-img{
+           display:none;
+        }
+        .image-content{
+            // border:1px solid $button-bg-color;
+            position:relative;
+            left:0;
+            margin:auto;
+            border-radius:10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+    }
+}
+
+@media screen and (max-width:390px) {
+    .main-content .hero{
+        .image-content{
+            width:350px;
+        }
+    }
+}
+
+@media screen and (max-width: 512px){
+    .main-content{
+     padding-top:0;
+    .title h1{
+       font-size:40px;
+       }
+    .hero .image-content h2{
+        font-size:32px;
+    }
+    }
+}
+
+@media screen and (max-width:991px){
+    .main-content{
+      padding-top:0;
+      .title h1{
+        padding-left:30px;
+      }
+  }
 }

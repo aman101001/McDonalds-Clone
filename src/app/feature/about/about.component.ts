@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 interface Card {
   img:string;
@@ -14,6 +14,23 @@ interface Card {
 })
 export class AboutComponent {
   cards:Card[]=[];
+
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible =150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+  }
+
 
   constructor(){
    this.cards= [{
@@ -39,6 +56,21 @@ export class AboutComponent {
      cardText:"Our nutrition calculator has the McDonald’s menu nutrition information you’re seeking. Learn more about your favorite meals.",
      buttonText:"Learn More"
     }];
-    
   }
+
+
+//  reveal() {
+//     var reveals = document.querySelectorAll(".reveal");
+//     for (var i = 0; i < reveals.length; i++) {
+//       var windowHeight = window.innerHeight;
+//       var elementTop = reveals[i].getBoundingClientRect().top;
+//       var elementVisible =150;
+//       if (elementTop < windowHeight - elementVisible) {
+//         reveals[i].classList.add("active");
+//       } else {
+//         reveals[i].classList.remove("active");
+//       }
+//     }
+// }
 }
+

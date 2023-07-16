@@ -5,14 +5,14 @@
     <div class="hero-img my-5">
         <img src="../../../assets/images/hero_img.jpeg" loading="lazy" alt="" class="img-fluid">
     </div>
-    <div class="disclaimer px-3">
+    <div class="disclaimer px-3  reveal">
         <h2>We’re Passionate About Our Food</h2>
         <p>From adding more balanced options to our Happy Meal®, to serving up fresh beef Quarter Pounder® burgers that are cooked when you order,
              we’re always finding ways to show our commitment to our customers and our food. </p>
     </div>
     <div class="cards px-3" >
         <div class="row" >
-            <div class="col-md-6" *ngFor="let card of cards"  >
+            <div class="col-md-6 reveal" *ngFor="let card of cards"  >
                 <div class="card" >
                     <div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
                       <img [src]="card.img" loading="lazy" class="img-fluid w-100"/>

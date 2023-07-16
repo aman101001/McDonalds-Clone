@@ -35,7 +35,6 @@
                
             }
             a:focus{
-                font-size:18px;
                 font-weight: 700;
             }
          
@@ -64,9 +63,6 @@
      .navbar .collapse .nav-item{
         font-size:14px;
         padding-right:18px;
-        a:focus{
-            font-size:16px;
-        }
     }
 }
 
@@ -78,13 +74,14 @@
         bottom: -2px;
         content: "";
         height: 3px;
-        left: 0;
+        left: 0px;
         position: absolute;
-        width: 0%;
         transition: 0.5s;
+        transform:scaleX(0)
     }
     &:focus::before{
         width: 100%;
+        transform:scaleX(1);
     }
     
 }
